@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Register | Stackly</title>
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/auth.css" />
+  <script src="js/storage.js" defer></script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js" defer></script>
+  <script src="js/app.js" defer></script>
+  <script src="js/register.js" defer></script>
+</head>
+<body class="auth-page auth-register-page">
+  <div class="auth-shell">
+    <aside class="auth-visual">
+      <div class="auth-visual-top">
+        <a class="brand auth-brand" href="index.html"><img class="site-logo" src="assets/Logo.webp" alt="Stackly" /></a>
+        <span class="auth-pill">Start certified learning</span>
+        <h2>Join a platform built for modern certification learning.</h2>
+        <p>Register to track your courses, earn certificates, and manage your learning journey from one elegant dashboard.</p>
+      </div>
+      <div class="auth-photo-card">
+        <img src="assets/Corporate-about-img.webp" alt="Professionals celebrating certification success" />
+        <div class="auth-progress-card">
+          <strong>4.8/5</strong>
+          <span>learner satisfaction score</span>
+        </div>
+      </div>
+      <div class="auth-stats">
+        <span><strong>3 min</strong> account setup</span>
+        <span><strong>Verified</strong> certificates</span>
+      </div>
+    </aside>
+    <section class="auth-content">
+      <div class="auth-content-head">
+        <span class="eyebrow">Create your account</span>
+        <a class="auth-home-link" href="index.html">Back to home</a>
+      </div>
+      <h1>Register for Stackly</h1>
+      <p>Fill in your details to create a secure profile for courses, certificates, and progress tracking.</p>
+      <div data-register-feedback></div>
+      <form class="form auth-form" data-register-form novalidate>
+        <div class="field">
+          <label for="fullName">Full Name</label>
+          <input id="fullName" name="fullName" type="text" placeholder="Your full name">
+          <p class="error" data-error-for="fullName"></p>
+        </div>
+        <div class="field">
+          <label for="email">Email Address</label>
+          <input id="email" name="email" type="email" placeholder="you@example.com">
+          <p class="error" data-error-for="email"></p>
+        </div>
+        <div class="field-grid">
+          <div class="field">
+            <label for="phone">Phone Number</label>
+            <input id="phone" name="phone" type="tel" placeholder="10-digit number">
+            <p class="error" data-error-for="phone"></p>
+          </div>
+          <div class="field">
+            <label for="role">Select Role</label>
+            <select id="role" name="role">
+              <option value="">Choose role</option>
+              <option>Student</option>
+              <option>Instructor</option>
+              <option>Administrator</option>
+            </select>
+            <p class="error" data-error-for="role"></p>
+          </div>
+        </div>
+        <div class="field-grid">
+          <div class="field">
+            <label for="password">Password</label>
+            <input id="password" name="password" type="password" placeholder="Minimum 8 characters">
+            <p class="error" data-error-for="password"></p>
+          </div>
+          <div class="field">
+            <label for="confirmPassword">Confirm Password</label>
+            <input id="confirmPassword" name="confirmPassword" type="password" placeholder="Repeat your password">
+            <p class="error" data-error-for="confirmPassword"></p>
+          </div>
+        </div>
+        <button class="btn btn-primary" type="submit">Register</button>
+      </form>
+      <div class="auth-switch">
+        <span>Already have an account?</span>
+        <a href="login.html">Login here</a>
+      </div>
+    </section>
+  </div>
+</body>
+</html>

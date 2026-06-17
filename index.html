@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stackly | Online Certification Platform</title>
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/pages.css" />
+  <script src="js/storage.js" defer></script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js" defer></script>
+  <script src="js/app.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="index.html">
+        <img class="site-logo" src="assets/Logo.webp" alt="Stackly" />
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a data-nav-link href="index.html">Home</a>
+        <a data-nav-link href="about.html">About</a>
+        <a data-nav-link href="courses.html">Courses</a>
+        <a data-nav-link href="services.html">Services</a>
+        <a data-nav-link href="certifications.html">Certifications</a>
+        <a data-nav-link href="instructors.html">Instructors</a>
+        <a data-nav-link href="contact.html">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <a class="btn btn-ghost" href="login.html">Login</a>
+        <a class="btn btn-primary" href="register.html">Register</a>
+        <button class="hamburger" type="button" aria-label="Open menu" aria-expanded="false" data-hamburger>
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="nav-panel" data-nav-panel>
+      <div class="container">
+        <nav class="nav" aria-label="Mobile primary">
+          <a data-nav-link href="index.html">Home</a>
+          <a data-nav-link href="about.html">About</a>
+          <a data-nav-link href="courses.html">Courses</a>
+          <a data-nav-link href="services.html">Services</a>
+          <a data-nav-link href="certifications.html">Certifications</a>
+          <a data-nav-link href="instructors.html">Instructors</a>
+          <a data-nav-link href="contact.html">Contact</a>
+        </nav>
+        <div class="nav-actions">
+          <a class="btn btn-ghost" href="login.html">Login</a>
+          <a class="btn btn-primary" href="register.html">Register</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero hero-showcase">
+      <div class="hero-scene" aria-hidden="true">
+      </div>
+      <div class="hero-overlay"></div>
+      <div class="container hero-stage">
+        <div class="hero-copy hero-copy-center">
+          <span class="eyebrow">WELCOME TO STACKLY</span>
+          <h1>Learn Today. Get Certified. Build Your Future.</h1>
+          <p class="lead" style="color:#ffffff !important;">Fusce sem dolor, interdum in efficitur ac, faucibus nec lorem. Sed nec molestie justo. Nunc quis sapien in arcu pharetra volutpat. Morbi nec vulputate dolor.</p>
+          <div class="hero-actions">
+            <a class="btn btn-secondary" href="404.html">READ MORE</a>
+            <a class="btn btn-primary" href="404.html">GET STARTED NOW</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section hero-features-section">
+      <div class="container">
+        <div class="hero-feature-row">
+          <article class="hero-feature-card">
+            <div class="category-icon" data-icon="courses"></div>
+            <h3>Trending Courses</h3>
+            <p>Lorem ipsum dolor sit amet sed nec molestie justo.</p>
+          </article>
+          <article class="hero-feature-card">
+            <div class="category-icon" data-icon="book"></div>
+            <h3>Books & Library</h3>
+            <p>Lorem ipsum dolor sit amet sed nec molestie justo.</p>
+          </article>
+          <article class="hero-feature-card">
+            <div class="category-icon" data-icon="teacher"></div>
+            <h3>Certified Teachers</h3>
+            <p>Lorem ipsum dolor sit amet sed nec molestie justo.</p>
+          </article>
+          <article class="hero-feature-card">
+            <div class="category-icon" data-icon="certificate"></div>
+            <h3>Certification</h3>
+            <p>Lorem ipsum dolor sit amet sed nec molestie justo.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="panel page-band" style="padding: 22px 24px; margin-bottom: 48px;">
+          <div class="split-grid" style="align-items: center;">
+            <div style="grid-column: span 7;">
+              <span class="eyebrow">Trusted learning experience</span>
+              <h3 style="margin: 14px 0 8px; font-size: 1.45rem;">Designed like a premium learning platform, not a static brochure site.</h3>
+              <p class="muted">Clear navigation, strong course cards, and a dashboard-first flow help learners move naturally from discovery to enrollment and certification.</p>
+            </div>
+            <div style="grid-column: span 5;" class="card-grid">
+              <div class="stats-card" style="grid-column: span 6;"><div class="stat-icon" data-icon="certificate"></div><div><strong>24/7</strong><p>Access</p></div></div>
+              <div class="stats-card" style="grid-column: span 6;"><div class="stat-icon" data-icon="progress"></div><div><strong>Live</strong><p>Tracking</p></div></div>
+            </div>
+          </div>
+        </div>
+        <div class="section-header">
+          <div>
+            <span class="eyebrow">Featured categories</span>
+            <h2>Explore skills that move your career forward</h2>
+          </div>
+          <p>Choose from in-demand learning tracks designed to help you build practical expertise and earn recognized credentials.</p>
+        </div>
+        <div class="card-grid">
+          <article class="category-card">
+            <div class="category-media category-media-web">
+              <img src="assets/web.webp" alt="Web development workspace with multiple screens and code" loading="lazy" decoding="async" />
+            </div>
+            <div class="category-icon" data-icon="code"></div>
+            <h3>Web Development</h3>
+            <p>Build responsive websites and interactive user experiences.</p>
+          </article>
+          <article class="category-card">
+            <div class="category-media category-media-data">
+              <img src="assets/data.webp" alt="Data analytics dashboard displayed on a laptop screen" loading="lazy" decoding="async" />
+            </div>
+            <div class="category-icon" data-icon="data"></div>
+            <h3>Data Science</h3>
+            <p>Turn raw data into insights, dashboards, and predictions.</p>
+          </article>
+          <article class="category-card">
+            <div class="category-media category-media-design">
+              <img src="assets/ux.webp" alt="Design team reviewing a user interface on a tablet" loading="lazy" decoding="async" />
+            </div>
+            <div class="category-icon" data-icon="design"></div>
+            <h3>UI/UX Design</h3>
+            <p>Create polished product experiences users enjoy.</p>
+          </article>
+          <article class="category-card">
+            <div class="category-media category-media-marketing">
+              <img src="assets/marketing.webp" alt="Marketing planning board with charts and campaign notes" loading="lazy" decoding="async" />
+            </div>
+            <div class="category-icon" data-icon="marketing"></div>
+            <h3>Digital Marketing</h3>
+            <p>Learn SEO, ads, analytics, and conversion strategy.</p>
+          </article>
+          <article class="category-card">
+            <div class="category-media category-media-security">
+              <img src="assets/security.webp" alt="Cyber security workspace with network security visuals" loading="lazy" decoding="async" />
+            </div>
+            <div class="category-icon" data-icon="security"></div>
+            <h3>Cyber Security</h3>
+            <p>Protect applications, systems, and user data.</p>
+          </article>
+          <article class="category-card">
+            <div class="category-media category-media-ai">
+              <img src="assets/ai.webp" alt="Artificial intelligence concept with data and neural network visuals" loading="lazy" decoding="async" />
+            </div>
+            <div class="category-icon" data-icon="brain"></div>
+            <h3>Artificial Intelligence</h3>
+            <p>Understand machine learning and modern AI workflows.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section choose-section">
+      <div class="container choose-grid">
+        <div class="choose-visual">
+          <img src="assets/who_choose_image.webp" alt="Students collaborating during an online certification session" loading="lazy" decoding="async" />
+          <div class="active-students-card">
+            <strong>20K+ Active Students</strong>
+            <div class="student-stack" aria-label="Active learners">
+              <span></span><span></span><span></span><span></span>
+              <em>10K+</em>
+            </div>
+          </div>
+          <a class="btn btn-primary" href="404.html">Get Started</a>
+        </div>
+        <div class="choose-content">
+          <span class="eyebrow">Why choose us</span>
+          <h2>Certification support built for serious online learners.</h2>
+          <p>Stackly gives learners structured course paths, practical assessments, mentor support, and verified certificates that make progress easy to track and share.</p>
+          <div class="choose-card-grid">
+            <article class="choose-card">
+              <div class="mini-check" data-icon="progress"></div>
+              <h3>Guided Skill Paths</h3>
+              <p>Follow clear roadmaps from beginner lessons to certificate-ready projects.</p>
+            </article>
+            <article class="choose-card">
+              <div class="mini-check" data-icon="certificate"></div>
+              <h3>Verified Certificates</h3>
+              <p>Earn credentials that show completion, assessment, and practical skill proof.</p>
+            </article>
+            <article class="choose-card">
+              <div class="mini-check" data-icon="teacher"></div>
+              <h3>Mentor Support</h3>
+              <p>Get help from instructors when concepts, projects, or assessments feel tough.</p>
+            </article>
+            <article class="choose-card">
+              <div class="mini-check" data-icon="clock"></div>
+              <h3>Flexible Learning</h3>
+              <p>Study at your own pace with dashboards, checkpoints, and lifetime resources.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <span class="eyebrow">Statistics</span>
+            <h2>Trusted by learners aiming for measurable progress</h2>
+          </div>
+        </div>
+        <div class="card-grid">
+          <article class="stats-card">
+            <div class="stat-icon" data-icon="courses"></div>
+            <div><strong data-count-to="100" data-count-suffix="+">100+</strong><p>Courses</p></div>
+          </article>
+          <article class="stats-card">
+            <div class="stat-icon" data-icon="users"></div>
+            <div><strong data-count-to="20000" data-count-format="compact" data-count-suffix="+">20K+</strong><p>Students</p></div>
+          </article>
+          <article class="stats-card">
+            <div class="stat-icon" data-icon="certificate"></div>
+            <div><strong data-count-to="500" data-count-suffix="+">500+</strong><p>Certifications Issued</p></div>
+          </article>
+          <article class="stats-card">
+            <div class="stat-icon" data-icon="teacher"></div>
+            <div><strong data-count-to="50" data-count-suffix="+">50+</strong><p>Expert Instructors</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-accent home-band">
+      <div class="container split-grid">
+        <div class="panel" style="grid-column: span 6;">
+          <span class="eyebrow">About Stackly</span>
+          <h2 style="margin-top: 12px;">A certification platform built for focused, real-world learning.</h2>
+          <p class="muted">We combine guided lessons, skill assessments, and a polished dashboard so learners can move from discovery to certification with confidence and clarity.</p>
+          <div class="stack-actions">
+            <a class="btn btn-primary" href="404.html">Learn More</a>
+            <a class="btn btn-outline" href="404.html">Talk to Us</a>
+          </div>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div>
+                <h3>Structured pathways</h3>
+                <p>Every course is organized around practical progress, not scattered lessons.</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div>
+                <h3>Verified outcomes</h3>
+                <p>Certificates and progress tracking give learners visible milestones they can share.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="panel">
+          <div class="about-visual">
+            <img src="https://images.unsplash.com/photo-1513258496099-48168024aec0?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=80&w=1600" alt="Students collaborating on laptops in a classroom" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <span class="eyebrow">Featured courses</span>
+            <h2>Popular programs learners are exploring right now</h2>
+          </div>
+          <p>Quick snapshots of the most useful tracks on the platform, built to lead into the full Courses page.</p>
+        </div>
+        <div class="mini-course-grid">
+          <article class="mini-course-card">
+            <div class="category-icon" data-icon="code"></div>
+            <h3>Frontend Development</h3>
+            <p>Build interactive interfaces and modern web experiences.</p>
+          </article>
+          <article class="mini-course-card">
+            <div class="category-icon" data-icon="data"></div>
+            <h3>Data Science</h3>
+            <p>Analyze, visualize, and interpret meaningful data.</p>
+          </article>
+          <article class="mini-course-card">
+            <div class="category-icon" data-icon="security"></div>
+            <h3>Cyber Security</h3>
+            <p>Learn how to protect systems and digital identities.</p>
+          </article>
+          <article class="mini-course-card">
+            <div class="category-icon" data-icon="brain"></div>
+            <h3>Artificial Intelligence</h3>
+            <p>Explore machine learning and AI-driven workflows.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-accent">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <span class="eyebrow">Student voices</span>
+            <h2>What learners say after joining Stackly</h2>
+          </div>
+        </div>
+        <div class="card-grid">
+          <article class="quote-card">
+            <div class="quote-media quote-media-one">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=80&w=1200" alt="Aarav Mehta portrait" />
+            </div>
+            <div class="quote-info">
+              <strong>Aarav Mehta</strong>
+              <p>Frontend Developer</p>
+            </div>
+          </article>
+          <article class="quote-card">
+            <div class="quote-media quote-media-two">
+              <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=80&w=1200" alt="Simran Nair portrait" />
+            </div>
+            <div class="quote-info">
+              <strong>Simran Nair</strong>
+              <p>UI and UX Designer</p>
+            </div>
+          </article>
+          <article class="quote-card">
+            <div class="quote-media quote-media-three">
+              <img src="https://images.unsplash.com/photo-1504593811423-6dd665756598?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=80&w=1200" alt="Vikram Kumar portrait" />
+            </div>
+            <div class="quote-info">
+              <strong>Vikram Kumar</strong>
+              <p>Senior Associate</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-banner">
+      <div class="container">
+        <div class="cta-shell">
+          <div>
+            <span class="eyebrow">Ready to begin?</span>
+            <h2 style="margin: 12px 0 8px;">Start your certification journey today.</h2>
+            <p>Join Stackly, enroll in a course, and begin tracking your progress on a platform designed for real learning outcomes.</p>
+          </div>
+          <a class="btn btn-primary" href="404.html">Create Account</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand-col">
+          <a class="brand" href="index.html">
+            <img class="site-logo footer-logo" src="assets/Logo.webp" alt="Stackly" />
+          </a>
+          <p>A modern certification platform helping learners build practical skills, earn verified credentials, and move confidently toward career growth.</p>
+          <h4>Follow us on:</h4>
+          <div class="footer-social" aria-label="Social media links">
+            <a href="404.html" aria-label="Facebook"><span data-icon="facebook"></span></a>
+            <a href="404.html" aria-label="LinkedIn"><span data-icon="linkedin"></span></a>
+            <a href="404.html" aria-label="Instagram"><span data-icon="instagram"></span></a>
+            <a href="404.html" aria-label="YouTube"><span data-icon="youtube"></span></a>
+            <a href="404.html" aria-label="X"><span data-icon="x"></span></a>
+          </div>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="courses.html">Courses</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="certifications.html">Certifications</a></li>
+            <li><a href="instructors.html">Instructors</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="404.html">Community</a></li>
+            <li><a href="404.html">Support</a></li>
+            <li><a href="404.html">Video Guides</a></li>
+            <li><a href="404.html">Documentation</a></li>
+            <li><a href="404.html">Security</a></li>
+            <li><a href="404.html">Template</a></li>
+          </ul>
+        </div>
+        <div class="footer-newsletter">
+          <h4>Get in touch!</h4>
+          <p>Subscribe to our newsletter to get our latest updates and news.</p>
+          <div class="newsletter-box">
+            <input type="email" placeholder="Email address" aria-label="Email address" />
+            <span data-icon="mail"></span>
+          </div>
+          <a class="btn btn-primary" href="404.html">Subscribe Now</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>Copyright (c) <span data-year></span> Stackly. All rights reserved.</span>
+        <span><a href="404.html">Privacy Policy</a><a href="404.html">Terms & Condition</a></span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

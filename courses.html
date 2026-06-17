@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Courses | Stackly</title>
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/pages.css" />
+  <script src="js/storage.js" defer></script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js" defer></script>
+  <script src="js/app.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="index.html"><img class="site-logo" src="assets/Logo.webp" alt="Stackly" /></a>
+      <nav class="nav">
+        <a data-nav-link href="index.html">Home</a>
+        <a data-nav-link href="about.html">About</a>
+        <a data-nav-link href="courses.html">Courses</a>
+        <a data-nav-link href="services.html">Services</a>
+        <a data-nav-link href="certifications.html">Certifications</a>
+        <a data-nav-link href="instructors.html">Instructors</a>
+        <a data-nav-link href="contact.html">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <a class="btn btn-ghost" href="login.html">Login</a>
+        <a class="btn btn-primary" href="register.html">Register</a>
+        <button class="hamburger" type="button" aria-label="Open menu" aria-expanded="false" data-hamburger><span></span><span></span><span></span></button>
+      </div>
+    </div>
+    <div class="nav-panel" data-nav-panel>
+      <div class="container">
+        <nav class="nav">
+          <a data-nav-link href="index.html">Home</a>
+          <a data-nav-link href="about.html">About</a>
+          <a data-nav-link href="courses.html">Courses</a>
+          <a data-nav-link href="services.html">Services</a>
+          <a data-nav-link href="certifications.html">Certifications</a>
+          <a data-nav-link href="instructors.html">Instructors</a>
+          <a data-nav-link href="contact.html">Contact</a>
+        </nav>
+        <div class="nav-actions">
+          <a class="btn btn-ghost" href="login.html">Login</a>
+          <a class="btn btn-primary" href="register.html">Register</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container page-hero-shell">
+        <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><span>Courses</span></div>
+        <span class="eyebrow">Certification courses</span>
+        <h1>Explore career-focused programs with clear outcomes.</h1>
+        <p>Each course blends high-quality learning content, practical assessments, and a direct path to a certificate you can showcase with confidence.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="card-grid">
+          <article class="course-card">
+            <div class="course-media"><img src="assets/web.webp" alt="Frontend developer working on a web interface" loading="lazy" decoding="async" /></div>
+            <div class="badge">Frontend Development</div>
+            <h3>Modern Frontend Development</h3>
+            <div class="course-meta"><span><span data-icon="clock"></span> 6 weeks</span><span><span data-icon="teacher"></span> A. Sharma</span><span class="star"><span data-icon="star"></span> 4.9</span></div>
+            <div class="course-meta"><span class="price">$49</span></div>
+            <a class="btn btn-primary" href="404.html">Enroll Now</a>
+          </article>
+          <article class="course-card">
+            <div class="course-media"><img src="assets/Corporate-about-img.webp" alt="Professionals celebrating a successful full stack project planning session" loading="lazy" decoding="async" /></div>
+            <div class="badge">Full Stack Development</div>
+            <h3>Full Stack Web Engineering</h3>
+            <div class="course-meta"><span><span data-icon="clock"></span> 10 weeks</span><span><span data-icon="teacher"></span> R. Verma</span><span class="star"><span data-icon="star"></span> 4.8</span></div>
+            <div class="course-meta"><span class="price">$79</span></div>
+            <a class="btn btn-primary" href="404.html">Enroll Now</a>
+          </article>
+          <article class="course-card">
+            <div class="course-media"><img src="assets/data.webp" alt="Analytics dashboard for data science training" loading="lazy" decoding="async" /></div>
+            <div class="badge">Data Science</div>
+            <h3>Applied Data Science</h3>
+            <div class="course-meta"><span><span data-icon="clock"></span> 8 weeks</span><span><span data-icon="teacher"></span> P. Nair</span><span class="star"><span data-icon="star"></span> 4.9</span></div>
+            <div class="course-meta"><span class="price">$69</span></div>
+            <a class="btn btn-primary" href="404.html">Enroll Now</a>
+          </article>
+          <article class="course-card">
+            <div class="course-media"><img src="assets/phython.webp" alt="Python programming course visual" loading="lazy" decoding="async" /></div>
+            <div class="badge">Python Programming</div>
+            <h3>Python for Professionals</h3>
+            <div class="course-meta"><span><span data-icon="clock"></span> 5 weeks</span><span><span data-icon="teacher"></span> A. Khan</span><span class="star"><span data-icon="star"></span> 4.8</span></div>
+            <div class="course-meta"><span class="price">$39</span></div>
+            <a class="btn btn-primary" href="404.html">Enroll Now</a>
+          </article>
+          <article class="course-card">
+            <div class="course-media"><img src="assets/ux.webp" alt="Modern workspace for cloud architecture learning" loading="lazy" decoding="async" /></div>
+            <div class="badge">Cloud Computing</div>
+            <h3>Cloud Architecture Essentials</h3>
+            <div class="course-meta"><span><span data-icon="clock"></span> 7 weeks</span><span><span data-icon="teacher"></span> S. Iyer</span><span class="star"><span data-icon="star"></span> 4.7</span></div>
+            <div class="course-meta"><span class="price">$89</span></div>
+            <a class="btn btn-primary" href="404.html">Enroll Now</a>
+          </article>
+          <article class="course-card">
+            <div class="course-media"><img src="assets/security.webp" alt="Cyber security workstation and secure communication tools" loading="lazy" decoding="async" /></div>
+            <div class="badge">Cyber Security</div>
+            <h3>Cyber Security Fundamentals</h3>
+            <div class="course-meta"><span><span data-icon="clock"></span> 8 weeks</span><span><span data-icon="teacher"></span> M. Saha</span><span class="star"><span data-icon="star"></span> 4.9</span></div>
+            <div class="course-meta"><span class="price">$99</span></div>
+            <a class="btn btn-primary" href="404.html">Enroll Now</a>
+          </article>
+          <article class="course-card">
+            <div class="course-media"><img src="assets/ai.webp" alt="Artificial intelligence circuit board visualization" loading="lazy" decoding="async" /></div>
+            <div class="badge">Artificial Intelligence</div>
+            <h3>AI and Machine Learning</h3>
+            <div class="course-meta"><span><span data-icon="clock"></span> 9 weeks</span><span><span data-icon="teacher"></span> R. Kumar</span><span class="star"><span data-icon="star"></span> 4.8</span></div>
+            <div class="course-meta"><span class="price">$109</span></div>
+            <a class="btn btn-primary" href="404.html">Enroll Now</a>
+          </article>
+          <article class="course-card">
+            <div class="course-media"><img src="assets/marketing.webp" alt="Marketing team planning a campaign strategy" loading="lazy" decoding="async" /></div>
+            <div class="badge">Digital Marketing</div>
+            <h3>Growth Marketing Certification</h3>
+            <div class="course-meta"><span><span data-icon="clock"></span> 6 weeks</span><span><span data-icon="teacher"></span> T. Joshi</span><span class="star"><span data-icon="star"></span> 4.7</span></div>
+            <div class="course-meta"><span class="price">$59</span></div>
+            <a class="btn btn-primary" href="404.html">Enroll Now</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-accent">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <span class="eyebrow">Learning paths</span>
+            <h2>Choose a path based on the role you want next.</h2>
+          </div>
+          <p>Each path groups the right courses, assessments, and portfolio outcomes so learners can move from basics to job-ready proof without guessing what to study next.</p>
+        </div>
+        <div class="card-grid">
+          <article class="path-card">
+            <div class="path-media"><img src="assets/courses_fullstack.webp" alt="Full stack development learning path visual" loading="lazy" decoding="async" /></div>
+            <div class="path-content">
+              <span class="badge">Developer Path</span>
+              <h3>Frontend to full stack</h3>
+              <p>Start with UI foundations, move into backend integration, and finish with deployable web projects.</p>
+              <ul>
+                <li>HTML, CSS, JavaScript, and responsive UI</li>
+                <li>APIs, databases, authentication, and deployment</li>
+                <li>Portfolio-ready projects with certificate proof</li>
+              </ul>
+            </div>
+          </article>
+          <article class="path-card">
+            <div class="path-media"><img src="assets/course_phython_data.webp" alt="Python data science and AI learning path visual" loading="lazy" decoding="async" /></div>
+            <div class="path-content">
+              <span class="badge">Analytics Path</span>
+              <h3>Python, data, and AI</h3>
+              <p>Build practical programming confidence, analyze real datasets, and understand modern AI workflows.</p>
+              <ul>
+                <li>Python fundamentals and automation practice</li>
+                <li>Data cleaning, visualization, and dashboards</li>
+                <li>Machine learning concepts with applied projects</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <span class="eyebrow">What is included</span>
+            <h2>Every course is built for progress you can track.</h2>
+          </div>
+        </div>
+        <div class="card-grid">
+          <article class="feature-card"><div class="feature-icon" data-icon="book"></div><h3>Structured modules</h3><p>Short lessons, guided exercises, and weekly checkpoints keep learning focused and manageable.</p></article>
+          <article class="feature-card"><div class="feature-icon" data-icon="progress"></div><h3>Progress dashboard</h3><p>Track completion, assessment scores, certificates, and the next action from one learner dashboard.</p></article>
+          <article class="feature-card"><div class="feature-icon" data-icon="teacher"></div><h3>Mentor support</h3><p>Get direction on tricky topics, project improvement, resume points, and interview preparation.</p></article>
+          <article class="feature-card"><div class="feature-icon" data-icon="certificate"></div><h3>Verified certificate</h3><p>Complete the assessments and receive a shareable certificate that highlights your practical skills.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft">
+      <div class="container">
+        <div class="split-grid course-info-grid">
+          <div class="panel wide-panel">
+            <span class="eyebrow">Course roadmap</span>
+            <h3>From enrollment to certification in four clear stages</h3>
+            <div class="roadmap-list">
+              <div><strong>01</strong><span>Enroll and complete your skill baseline.</span></div>
+              <div><strong>02</strong><span>Follow weekly modules with guided practice tasks.</span></div>
+              <div><strong>03</strong><span>Submit projects and complete mock assessments.</span></div>
+              <div><strong>04</strong><span>Earn your certificate and prepare portfolio proof.</span></div>
+            </div>
+          </div>
+          <aside class="panel side-panel">
+            <span class="eyebrow">Quick stats</span>
+            <div class="course-stat-list">
+              <div><strong>8</strong><span>Focused programs</span></div>
+              <div><strong>5-10</strong><span>Week completion range</span></div>
+              <div><strong>4.8</strong><span>Average learner rating</span></div>
+            </div>
+            <a class="btn btn-primary" href="404.html">Start Learning</a>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <span class="eyebrow">Course questions</span>
+            <h2>Everything learners usually ask before enrolling.</h2>
+          </div>
+        </div>
+        <div class="faq-grid">
+          <article class="panel faq-card"><h3>Can beginners join these courses?</h3><p>Yes. Each course starts with fundamentals and adds practical tasks gradually, so learners can build confidence step by step.</p></article>
+          <article class="panel faq-card"><h3>Do I get a certificate?</h3><p>Yes. Certificates are issued after completing the required modules, assignments, and final assessment for the selected course.</p></article>
+          <article class="panel faq-card"><h3>Are projects included?</h3><p>Yes. Every course includes practical work so your certificate is backed by visible project experience.</p></article>
+          <article class="panel faq-card"><h3>How do I choose the right course?</h3><p>You can start with the learning paths above or contact support for help choosing a program based on your career goal.</p></article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand-col">
+          <a class="brand" href="index.html">
+            <img class="site-logo footer-logo" src="assets/Logo.webp" alt="Stackly" />
+          </a>
+          <p>A modern certification platform helping learners build practical skills, earn verified credentials, and move confidently toward career growth.</p>
+          <h4>Follow us on:</h4>
+          <div class="footer-social" aria-label="Social media links">
+            <a href="404.html" aria-label="Facebook"><span data-icon="facebook"></span></a>
+            <a href="404.html" aria-label="LinkedIn"><span data-icon="linkedin"></span></a>
+            <a href="404.html" aria-label="Instagram"><span data-icon="instagram"></span></a>
+            <a href="404.html" aria-label="YouTube"><span data-icon="youtube"></span></a>
+            <a href="404.html" aria-label="X"><span data-icon="x"></span></a>
+          </div>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="courses.html">Courses</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="certifications.html">Certifications</a></li>
+            <li><a href="instructors.html">Instructors</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="404.html">Community</a></li>
+            <li><a href="404.html">Support</a></li>
+            <li><a href="404.html">Video Guides</a></li>
+            <li><a href="404.html">Documentation</a></li>
+            <li><a href="404.html">Security</a></li>
+            <li><a href="404.html">Template</a></li>
+          </ul>
+        </div>
+        <div class="footer-newsletter">
+          <h4>Get in touch!</h4>
+          <p>Subscribe to our newsletter to get our latest updates and news.</p>
+          <div class="newsletter-box">
+            <input type="email" placeholder="Email address" aria-label="Email address" />
+            <span data-icon="mail"></span>
+          </div>
+          <a class="btn btn-primary" href="404.html">Subscribe Now</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>Copyright (c) <span data-year></span> Stackly. All rights reserved.</span>
+        <span><a href="404.html">Privacy Policy</a><a href="404.html">Terms & Condition</a></span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

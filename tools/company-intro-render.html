@@ -1,0 +1,131 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <style>
+    html, body { margin: 0; width: 1600px; height: 900px; overflow: hidden; background: #f7f2eb; }
+    canvas { display: block; }
+  </style>
+</head>
+<body>
+<canvas id="c" width="1600" height="900"></canvas>
+<script>
+const c = document.getElementById('c');
+const x = c.getContext('2d');
+function roundRect(x0, y0, w, h, r) {
+  const rr = Math.min(r, w/2, h/2);
+  x.beginPath();
+  x.moveTo(x0 + rr, y0);
+  x.arcTo(x0 + w, y0, x0 + w, y0 + h, rr);
+  x.arcTo(x0 + w, y0 + h, x0, y0 + h, rr);
+  x.arcTo(x0, y0 + h, x0, y0, rr);
+  x.arcTo(x0, y0, x0 + w, y0, rr);
+  x.closePath();
+}
+
+const bg = x.createLinearGradient(0,0,1600,900);
+bg.addColorStop(0, '#f7f2eb');
+bg.addColorStop(0.35, '#cfedf9');
+bg.addColorStop(1, '#8db8ff');
+x.fillStyle = bg;
+x.fillRect(0,0,1600,900);
+
+function glow(cx, cy, r, color, alpha) {
+  const g = x.createRadialGradient(cx, cy, 0, cx, cy, r);
+  g.addColorStop(0, color.replace('ALPHA', alpha));
+  g.addColorStop(1, color.replace('ALPHA', '0'));
+  x.fillStyle = g;
+  x.beginPath(); x.arc(cx, cy, r, 0, Math.PI*2); x.fill();
+}
+glow(250, 220, 180, 'rgba(255,255,255,ALPHA)', 0.55);
+glow(1250, 230, 240, 'rgba(255,255,255,ALPHA)', 0.28);
+glow(1320, 720, 260, 'rgba(255,255,255,ALPHA)', 0.22);
+glow(240, 760, 260, 'rgba(255,255,255,ALPHA)', 0.18);
+
+x.globalAlpha = 0.28;
+x.strokeStyle = '#ffffff';
+x.lineWidth = 3;
+for (let y = 140; y <= 760; y += 160) { x.beginPath(); x.moveTo(0,y); x.lineTo(1600,y); x.stroke(); }
+for (let z = 120; z <= 1480; z += 260) { x.beginPath(); x.moveTo(z,0); x.lineTo(z,900); x.stroke(); }
+x.globalAlpha = 1;
+
+// Left text block
+x.fillStyle = '#1c2f4d';
+x.font = '700 40px Arial';
+x.fillText('LEARNERS', 96, 190);
+x.fillText('WORKING', 96, 240);
+x.fillText('TOGETHER', 96, 290);
+
+// top bar
+x.fillStyle = '#20324f';
+roundRect(520, 18, 620, 88, 10); x.fill();
+x.strokeStyle = '#10203a'; x.lineWidth = 4; x.stroke();
+x.fillStyle = '#ffffff'; x.font = '700 28px Arial';
+x.fillText('SKILL VALIDATION ROADMAP', 560, 58);
+x.font = '24px Arial'; x.fillStyle = '#d6e6ff';
+x.fillText('PROGRESS: 75%  |  SKILLS VALIDATED: 75/100', 560, 88);
+
+// main path
+const pts = [
+  [160, 620], [280, 620], [430, 520], [570, 630], [720, 630], [860, 520], [1020, 430], [1220, 520], [1380, 330]
+];
+x.lineCap = 'round'; x.lineJoin = 'round';
+for (let i = 0; i < pts.length - 1; i++) {
+  const [a,b] = pts[i], [c1,d1] = pts[i+1];
+  const g = x.createLinearGradient(a,b,c1,d1);
+  g.addColorStop(0, '#2ae0ff');
+  g.addColorStop(1, '#2d7cff');
+  x.strokeStyle = g;
+  x.lineWidth = 18;
+  x.beginPath(); x.moveTo(a,b); x.lineTo(c1,d1); x.stroke();
+}
+function node(cx, cy, r, label, iconColor) {
+  x.fillStyle = '#fff'; x.strokeStyle = '#d8eef9'; x.lineWidth = 4;
+  x.beginPath(); x.arc(cx, cy, r, 0, Math.PI*2); x.fill(); x.stroke();
+  x.fillStyle = iconColor || '#2d7cff';
+  x.beginPath(); x.arc(cx, cy, 12, 0, Math.PI*2); x.fill();
+}
+pts.forEach((p,i)=>node(p[0], p[1], [48,52,52,56,56,64,70,56,52][i], '', '#69d9ff'));
+
+// central badge
+roundRect(800, 210, 290, 250, 38); x.fillStyle = 'rgba(255,255,255,0.88)'; x.fill();
+x.strokeStyle = 'rgba(214,236,255,0.75)'; x.lineWidth = 4; x.stroke();
+x.fillStyle = '#183a60'; x.font = '700 26px Arial';
+x.fillText('CERTIFICATION & VERIFIED SKILLS', 780, 190);
+x.font = '700 28px Arial'; x.fillText('LEARNING', 885, 338); x.fillText('IN ACTION', 875, 380);
+
+// right-side progress panel
+x.fillStyle = '#fff'; roundRect(1360, 135, 180, 120, 12); x.fill(); x.strokeStyle = '#20324f'; x.lineWidth = 4; x.stroke();
+x.fillStyle = '#1d3557'; x.font = '700 22px Arial'; x.fillText('VISIBLE', 1388, 110); x.fillText('PROGRESS', 1380, 150);
+x.fillStyle = '#ff6b35'; x.font = '700 22px Arial'; x.fillText('SHAREABLE', 1360, 500); x.fillText('CERTIFICATE', 1360, 530);
+
+// lower desks
+x.fillStyle = '#e8eef7';
+roundRect(54, 700, 470, 150, 18); x.fill();
+roundRect(600, 700, 420, 150, 18); x.fill();
+roundRect(1180, 700, 360, 150, 18); x.fill();
+
+// people silhouettes
+function person(cx, cy, scale, skin, shirt) {
+  x.fillStyle = shirt;
+  roundRect(cx-30*scale, cy+22*scale, 60*scale, 92*scale, 18*scale); x.fill();
+  x.fillStyle = skin;
+  x.beginPath(); x.arc(cx, cy, 24*scale, 0, Math.PI*2); x.fill();
+}
+person(130, 552, 1, '#f2c9a3', '#7da2c7');
+person(260, 555, 1, '#71452f', '#556b2f');
+person(720, 540, 1.05, '#efc7a9', '#a55a3d');
+person(860, 560, 1, '#e8c8a5', '#8b5a2b');
+person(1250, 560, 1, '#e9b998', '#6f7d88');
+person(1370, 560, 1, '#d9b08c', '#d19b2f');
+
+// central screens
+x.fillStyle = '#1f334f'; roundRect(650, 640, 170, 110, 10); x.fill();
+x.fillStyle = '#69d9ff'; x.font = '700 42px Arial'; x.fillText('</>', 705, 705);
+x.fillStyle = '#20324f'; roundRect(830, 640, 190, 110, 10); x.fill();
+x.fillStyle = '#b9d7ff'; x.font = '18px Arial'; x.fillText('dashboard', 880, 700);
+
+document.body.innerText = c.toDataURL('image/webp', 0.82);
+</script>
+</body>
+</html>

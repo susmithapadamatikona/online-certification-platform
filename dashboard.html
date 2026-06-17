@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard | Stackly</title>
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/dashboard.css" />
+  <script src="js/storage.js" defer></script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js" defer></script>
+  <script src="js/app.js" defer></script>
+  <script src="js/dashboard.js" defer></script>
+</head>
+<body>
+  <div class="dashboard-shell">
+    <aside class="sidebar" data-sidebar>
+      <a class="brand" href="index.html"><img class="site-logo" src="assets/Logo.webp" alt="Stackly" /></a>
+      <nav class="sidebar-nav" aria-label="Dashboard">
+        <a class="active" href="#dashboard" data-dashboard-tab="dashboard"><span data-icon="home"></span>Dashboard</a>
+        <a href="#courses" data-dashboard-tab="courses"><span data-icon="courses"></span>My Courses</a>
+        <a href="#certifications" data-dashboard-tab="certifications"><span data-icon="certificate"></span>My Certifications</a>
+        <a href="#progress" data-dashboard-tab="progress"><span data-icon="progress"></span>Progress</a>
+        <a href="#profile" data-dashboard-tab="profile"><span data-icon="profile"></span>Profile</a>
+        <a href="#settings" data-dashboard-tab="settings"><span data-icon="settings"></span>Settings</a>
+      </nav>
+      <div class="sidebar-footer">
+        <a class="btn btn-secondary" href="#" data-logout><span data-icon="logout"></span>Logout</a>
+      </div>
+    </aside>
+
+    <div class="sidebar-backdrop" data-sidebar-backdrop></div>
+
+    <main class="dashboard-main">
+      <section class="dashboard-panel">
+        <section class="dashboard-view active" data-dashboard-section="dashboard">
+          <div class="session-banner">
+          <div>
+            <span class="dashboard-eyebrow">Certification dashboard</span>
+            <h1>Dashboard</h1>
+            <p>Welcome back, <strong data-user-email>user@gmail.com</strong>.</p>
+          </div>
+          <div class="welcome-user-pill">
+            <span class="welcome-dot"></span>
+            <div>
+              <span>Logged in as</span>
+              <strong data-user-email>user@gmail.com</strong>
+              <p data-user-role>Student</p>
+            </div>
+          </div>
+          </div>
+
+          <div class="dashboard-grid">
+          <article class="dashboard-card"><div class="card-top"><div class="dashboard-icon" data-icon="courses"></div><span class="badge">This month</span></div><strong data-count-to="8" data-count-min-digits="2">08</strong><p>Total Courses Enrolled</p></article>
+          <article class="dashboard-card"><div class="card-top"><div class="dashboard-icon" data-icon="certificate"></div><span class="badge">Completed</span></div><strong data-count-to="5" data-count-min-digits="2">05</strong><p>Courses Completed</p></article>
+          <article class="dashboard-card"><div class="card-top"><div class="dashboard-icon" data-icon="award"></div><span class="badge">Earned</span></div><strong data-count-to="3" data-count-min-digits="2">03</strong><p>Certificates Earned</p></article>
+          <article class="dashboard-card"><div class="card-top"><div class="dashboard-icon" data-icon="progress"></div><span class="badge">Track</span></div><strong data-count-to="82" data-count-suffix="%">82%</strong><p>Learning Progress Percentage</p></article>
+          <article class="dashboard-card"><div class="card-top"><div class="dashboard-icon" data-icon="star"></div><span class="badge">Next up</span></div><strong data-count-to="2" data-count-min-digits="2">02</strong><p>Upcoming Assessments</p></article>
+          <article class="dashboard-card"><div class="card-top"><div class="dashboard-icon" data-icon="award"></div><span class="badge">Milestones</span></div><strong data-count-to="12" data-count-min-digits="2">12</strong><p>Achievements</p></article>
+          </div>
+          <div class="dashboard-grid">
+            <section class="panel wide-panel">
+              <div class="dashboard-section-title">
+                <h2>Today&apos;s Learning Focus</h2>
+              </div>
+              <div class="timeline-list">
+                <div><span>09:30 AM</span><strong>Complete Frontend responsive layout module</strong><p class="muted">Finish the final quiz to move this course closer to certification.</p></div>
+                <div><span>02:00 PM</span><strong>Review Applied Data Science assignment</strong><p class="muted">Upload the project notebook and check mentor feedback.</p></div>
+                <div><span>05:30 PM</span><strong>Prepare for Cloud Architecture assessment</strong><p class="muted">Revise networking, storage, and deployment fundamentals.</p></div>
+              </div>
+            </section>
+            <section class="panel side-panel">
+              <div class="dashboard-section-title">
+                <h2>Next Actions</h2>
+              </div>
+              <div class="profile-list">
+                <div class="profile-item"><span>Pending quiz</span><strong>Frontend</strong></div>
+                <div class="profile-item"><span>Mentor review</span><strong>Data Science</strong></div>
+                <div class="profile-item"><span>Certificate ready</span><strong>03 files</strong></div>
+              </div>
+            </section>
+          </div>
+        </section>
+
+        <section class="dashboard-view" data-dashboard-section="courses">
+          <div class="dashboard-grid">
+          <section class="panel wide-panel">
+            <div class="dashboard-section-title">
+              <h2>My Courses</h2>
+              <a class="btn btn-outline" href="404.html">Browse Courses</a>
+            </div>
+            <div class="course-row">
+              <div>
+                <h3>Modern Frontend Development</h3>
+                <p class="muted">Progress in motion</p>
+                <div class="progress"><span style="width: 78%;"></span></div>
+              </div>
+              <a class="btn btn-primary" href="#">Continue Learning</a>
+            </div>
+            <div class="course-row">
+              <div>
+                <h3>Applied Data Science</h3>
+                <p class="muted">Progress in motion</p>
+                <div class="progress"><span style="width: 64%;"></span></div>
+              </div>
+              <a class="btn btn-primary" href="#">Continue Learning</a>
+            </div>
+            <div class="course-row">
+              <div>
+                <h3>Cloud Architecture Essentials</h3>
+                <p class="muted">Progress in motion</p>
+                <div class="progress"><span style="width: 43%;"></span></div>
+              </div>
+              <a class="btn btn-primary" href="#">Continue Learning</a>
+            </div>
+            <div class="course-row">
+              <div>
+                <h3>Cybersecurity Foundations</h3>
+                <p class="muted">New course assigned by your learning path</p>
+                <div class="progress"><span style="width: 22%;"></span></div>
+              </div>
+              <a class="btn btn-primary" href="#">Start Module</a>
+            </div>
+          </section>
+          <section class="panel side-panel">
+            <div class="dashboard-section-title">
+              <h2>Course Plan</h2>
+            </div>
+            <p class="muted">Continue your active courses and complete pending assessments to unlock certificates faster.</p>
+            <div class="profile-list">
+              <div class="profile-item"><span>Active courses</span><strong>08</strong></div>
+              <div class="profile-item"><span>In progress</span><strong>03</strong></div>
+              <div class="profile-item"><span>Next assessment</span><strong>Frontend Quiz</strong></div>
+            </div>
+          </section>
+          </div>
+          <div class="dashboard-grid">
+            <section class="panel wide-panel">
+              <div class="dashboard-section-title">
+                <h2>Recommended Learning Path</h2>
+              </div>
+              <div class="dashboard-mini-grid">
+                <article><strong>Frontend Specialist</strong><p class="muted">HTML, CSS, JavaScript, React, accessibility, and deployment.</p></article>
+                <article><strong>Data Analyst Track</strong><p class="muted">Python, SQL, visualization, statistics, and dashboard storytelling.</p></article>
+                <article><strong>Cloud Practitioner</strong><p class="muted">Cloud basics, compute, storage, networking, and security essentials.</p></article>
+              </div>
+            </section>
+            <section class="panel side-panel">
+              <div class="dashboard-section-title">
+                <h2>Mentor Notes</h2>
+              </div>
+              <p class="muted">Focus on completing one assessment at a time. Your strongest progress this week is in frontend development.</p>
+            </section>
+          </div>
+        </section>
+
+        <section class="dashboard-view" data-dashboard-section="certifications">
+          <div class="dashboard-grid">
+          <section class="panel side-panel">
+            <div class="dashboard-section-title">
+              <h2>My Certificates</h2>
+            </div>
+            <div class="cert-row">
+              <div>
+                <h3>Frontend Development</h3>
+                <p class="muted">Completion date: 12 Jun 2026</p>
+              </div>
+              <a class="btn btn-outline" href="#">Download</a>
+            </div>
+            <div class="cert-row">
+              <div>
+                <h3>Data Science Essentials</h3>
+                <p class="muted">Completion date: 10 Jun 2026</p>
+              </div>
+              <a class="btn btn-outline" href="#">Download</a>
+            </div>
+            <div class="cert-row">
+              <div>
+                <h3>Cloud Architecture</h3>
+                <p class="muted">Completion date: 08 Jun 2026</p>
+              </div>
+              <a class="btn btn-outline" href="#">Download</a>
+            </div>
+          </section>
+          <section class="panel wide-panel">
+            <div class="dashboard-section-title">
+              <h2>Certification Status</h2>
+            </div>
+            <div class="dashboard-grid compact-grid">
+              <article class="dashboard-card"><div class="card-top"><div class="dashboard-icon" data-icon="award"></div><span class="badge">Earned</span></div><strong>03</strong><p>Certificates available to download.</p></article>
+              <article class="dashboard-card"><div class="card-top"><div class="dashboard-icon" data-icon="certificate"></div><span class="badge">Pending</span></div><strong>02</strong><p>Certificates waiting for final assessment.</p></article>
+            </div>
+            <div class="certificate-timeline">
+              <div><span>Issued</span><strong>Frontend Development</strong><p class="muted">Credential ID: CH-FE-2026-1048</p></div>
+              <div><span>Issued</span><strong>Data Science Essentials</strong><p class="muted">Credential ID: CH-DS-2026-0974</p></div>
+              <div><span>Under review</span><strong>Cloud Architecture</strong><p class="muted">Final project verification in progress.</p></div>
+            </div>
+          </section>
+          </div>
+          <div class="dashboard-grid">
+            <section class="panel wide-panel">
+              <div class="dashboard-section-title">
+                <h2>Certificate Requirements</h2>
+              </div>
+              <div class="profile-list">
+                <div class="profile-item"><span>Minimum course progress</span><strong>90%</strong></div>
+                <div class="profile-item"><span>Final assessment score</span><strong>70% or above</strong></div>
+                <div class="profile-item"><span>Project submission</span><strong>Required</strong></div>
+              </div>
+            </section>
+            <section class="panel side-panel">
+              <div class="dashboard-section-title">
+                <h2>Share Credentials</h2>
+              </div>
+              <p class="muted">Download certificates as PDF and add your verified credential link to resumes or professional profiles.</p>
+            </section>
+          </div>
+        </section>
+
+        <section class="dashboard-view" data-dashboard-section="progress">
+          <div class="dashboard-grid">
+            <section class="panel wide-panel">
+              <div class="dashboard-section-title">
+                <h2>Learning Progress</h2>
+              </div>
+              <div class="course-row">
+                <div>
+                  <h3>Modern Frontend Development</h3>
+                  <p class="muted">78% completed</p>
+                  <div class="progress"><span style="width: 78%;"></span></div>
+                </div>
+              </div>
+              <div class="course-row">
+                <div>
+                  <h3>Applied Data Science</h3>
+                  <p class="muted">64% completed</p>
+                  <div class="progress"><span style="width: 64%;"></span></div>
+                </div>
+              </div>
+              <div class="course-row">
+                <div>
+                  <h3>Cloud Architecture Essentials</h3>
+                  <p class="muted">43% completed</p>
+                  <div class="progress"><span style="width: 43%;"></span></div>
+                </div>
+              </div>
+            </section>
+            <section class="panel side-panel">
+              <div class="dashboard-section-title">
+                <h2>Progress Summary</h2>
+              </div>
+              <div class="profile-list">
+                <div class="profile-item"><span>Overall progress</span><strong>82%</strong></div>
+                <div class="profile-item"><span>Assessments due</span><strong>02</strong></div>
+                <div class="profile-item"><span>Achievements</span><strong>12</strong></div>
+              </div>
+            </section>
+          </div>
+          <div class="dashboard-grid">
+            <section class="panel wide-panel">
+              <div class="dashboard-section-title">
+                <h2>Skill Breakdown</h2>
+              </div>
+              <div class="skill-list">
+                <div><span>Frontend UI</span><div class="progress"><span style="width: 86%;"></span></div><strong>86%</strong></div>
+                <div><span>Python &amp; Data</span><div class="progress"><span style="width: 68%;"></span></div><strong>68%</strong></div>
+                <div><span>Cloud Concepts</span><div class="progress"><span style="width: 52%;"></span></div><strong>52%</strong></div>
+                <div><span>Project Readiness</span><div class="progress"><span style="width: 74%;"></span></div><strong>74%</strong></div>
+              </div>
+            </section>
+            <section class="panel side-panel">
+              <div class="dashboard-section-title">
+                <h2>Weekly Goal</h2>
+              </div>
+              <p class="muted">Complete two lessons, one project checkpoint, and one assessment attempt before the weekend.</p>
+            </section>
+          </div>
+        </section>
+
+        <section class="dashboard-view" data-dashboard-section="profile">
+          <div class="dashboard-grid">
+          <section class="panel wide-panel">
+            <div class="dashboard-section-title">
+              <h2>Profile</h2>
+            </div>
+            <div class="profile-list">
+              <div class="profile-item"><span>Full Name</span><strong data-user-name>Guest User</strong></div>
+              <div class="profile-item"><span>Email Address</span><strong data-user-email>user@gmail.com</strong></div>
+              <div class="profile-item"><span>Selected Role</span><strong data-user-role>Student</strong></div>
+              <div class="profile-item"><span>Phone Number</span><strong data-user-phone>--</strong></div>
+              <div class="profile-item"><span>Learning Track</span><strong>Professional Certification</strong></div>
+              <div class="profile-item"><span>Member Since</span><strong>June 2026</strong></div>
+              <div class="profile-item"><span>Preferred Mode</span><strong>Self-paced online</strong></div>
+            </div>
+          </section>
+          <section class="panel side-panel">
+            <div class="dashboard-section-title">
+              <h2>Quick Notes</h2>
+            </div>
+            <p class="muted">Your dashboard uses local storage, so the session stays available until you log out. The sidebar is collapsible on smaller screens.</p>
+            <div class="stack-actions">
+              <a class="btn btn-primary" href="contact.html">Contact Support</a>
+              <a class="btn btn-outline" href="services.html">View Services</a>
+            </div>
+          </section>
+          </div>
+          <div class="dashboard-grid">
+            <section class="panel wide-panel">
+              <div class="dashboard-section-title">
+                <h2>Profile Completion</h2>
+              </div>
+              <div class="skill-list">
+                <div><span>Basic details</span><div class="progress"><span style="width: 100%;"></span></div><strong>Done</strong></div>
+                <div><span>Learning preferences</span><div class="progress"><span style="width: 75%;"></span></div><strong>75%</strong></div>
+                <div><span>Certificate sharing</span><div class="progress"><span style="width: 40%;"></span></div><strong>40%</strong></div>
+              </div>
+            </section>
+            <section class="panel side-panel">
+              <div class="dashboard-section-title">
+                <h2>Support Contact</h2>
+              </div>
+              <p class="muted">For account updates, certificate corrections, or course access issues, contact the support team from the Contact page.</p>
+            </section>
+          </div>
+        </section>
+
+        <section class="dashboard-view" data-dashboard-section="settings">
+          <div class="dashboard-grid">
+            <section class="panel wide-panel">
+              <div class="dashboard-section-title">
+                <h2>Settings</h2>
+              </div>
+              <div class="profile-list">
+                <div class="profile-item"><span>Email notifications</span><strong>Enabled</strong></div>
+                <div class="profile-item"><span>Certificate reminders</span><strong>Enabled</strong></div>
+                <div class="profile-item"><span>Account role</span><strong data-user-role>Student</strong></div>
+                <div class="profile-item"><span>Session storage</span><strong>Local browser</strong></div>
+                <div class="profile-item"><span>Assessment alerts</span><strong>Weekly</strong></div>
+                <div class="profile-item"><span>Theme preference</span><strong>Stackly default</strong></div>
+              </div>
+            </section>
+            <section class="panel side-panel">
+              <div class="dashboard-section-title">
+                <h2>Account Actions</h2>
+              </div>
+              <p class="muted">Manage your demo session and continue exploring certification platform features.</p>
+              <div class="stack-actions">
+                <a class="btn btn-primary" href="courses.html">View Courses</a>
+                <a class="btn btn-outline" href="#" data-logout>Logout</a>
+              </div>
+            </section>
+          </div>
+          <div class="dashboard-grid">
+            <section class="panel wide-panel">
+              <div class="dashboard-section-title">
+                <h2>Privacy &amp; Learning Preferences</h2>
+              </div>
+              <div class="dashboard-mini-grid">
+                <article><strong>Profile visibility</strong><p class="muted">Only your name, role, and completed certificates are visible in shared links.</p></article>
+                <article><strong>Reminder schedule</strong><p class="muted">Receive course progress and assessment reminders once per week.</p></article>
+                <article><strong>Certificate delivery</strong><p class="muted">Completed certificates are stored in your dashboard and available as PDF.</p></article>
+              </div>
+            </section>
+            <section class="panel side-panel">
+              <div class="dashboard-section-title">
+                <h2>Security</h2>
+              </div>
+              <p class="muted">This static demo stores session information in your browser only. Logging out clears the active dashboard session.</p>
+            </section>
+          </div>
+        </section>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

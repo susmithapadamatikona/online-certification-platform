@@ -1,0 +1,46 @@
+.page-band {
+  margin-top: 22px;
+}
+
+.course-card .course-media {
+  background:
+    linear-gradient(135deg, rgba(255, 77, 31, 0.9), rgba(17, 17, 17, 0.88)),
+    radial-gradient(circle at top right, rgba(255, 255, 255, 0.2), transparent 40%);
+}
+
+.grid-6 {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.stack {
+  display: grid;
+  gap: 18px;
+}
+
+.contact-card {
+  padding: 24px;
+}
+
+.contact-details {
+  display: grid;
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.contact-item {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.contact-item .mini-icon {
+  flex: 0 0 auto;
+}
+
+@media (max-width: 900px) {
+  .grid-6 {
+    grid-template-columns: 1fr;
+  }
+}
