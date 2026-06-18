@@ -81,13 +81,55 @@ document.addEventListener("DOMContentLoaded", () => {
   const sidebar = document.querySelector("[data-sidebar]");
   const backdrop = document.querySelector("[data-sidebar-backdrop]");
   const sidebarToggle = document.querySelector("[data-sidebar-toggle]");
+  const sidebarClose = document.querySelector("[data-sidebar-close]");
   if (sidebar && backdrop && sidebarToggle) {
+    const syncSidebarState = () => {
+      const isOpen = sidebar.classList.contains("open");
+      sidebarToggle.classList.toggle("is-open", isOpen);
+      sidebarToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+      sidebarToggle.setAttribute("aria-label", isOpen ? "Close menu" : "Open menu");
+      backdrop.classList.toggle("open", isOpen);
+      document.body.classList.toggle("sidebar-open", isOpen);
+      document.body.style.overflow = isOpen ? "hidden" : "";
+    };
+
     const toggleSidebar = () => {
       sidebar.classList.toggle("open");
-      backdrop.classList.toggle("open");
+      syncSidebarState();
     };
 
     sidebarToggle.addEventListener("click", toggleSidebar);
-    backdrop.addEventListener("click", toggleSidebar);
+    if (sidebarClose) {
+      sidebarClose.addEventListener("click", () => {
+        sidebar.classList.remove("open");
+        syncSidebarState();
+      });
+    }
+    backdrop.addEventListener("click", () => {
+      sidebar.classList.remove("open");
+      syncSidebarState();
+    });
+    sidebar.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        sidebar.classList.remove("open");
+        syncSidebarState();
+      });
+    });
+
+    window.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && sidebar.classList.contains("open")) {
+        sidebar.classList.remove("open");
+        syncSidebarState();
+      }
+    });
+
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 900 && sidebar.classList.contains("open")) {
+        sidebar.classList.remove("open");
+        syncSidebarState();
+      }
+    });
+
+    syncSidebarState();
   }
 });

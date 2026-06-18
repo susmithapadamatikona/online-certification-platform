@@ -30,14 +30,26 @@ document.addEventListener("DOMContentLoaded", () => {
   const hamburger = document.querySelector("[data-hamburger]");
   const navPanel = document.querySelector("[data-nav-panel]");
   if (hamburger && navPanel) {
+    const syncHamburgerState = () => {
+      const isOpen = navPanel.classList.contains("open");
+      hamburger.classList.toggle("is-open", isOpen);
+      hamburger.setAttribute("aria-expanded", isOpen ? "true" : "false");
+      hamburger.setAttribute("aria-label", isOpen ? "Close menu" : "Open menu");
+    };
+
     hamburger.addEventListener("click", () => {
       navPanel.classList.toggle("open");
-      hamburger.setAttribute("aria-expanded", navPanel.classList.contains("open") ? "true" : "false");
+      syncHamburgerState();
     });
 
     navPanel.querySelectorAll("a, button").forEach((item) => {
-      item.addEventListener("click", () => navPanel.classList.remove("open"));
+      item.addEventListener("click", () => {
+        navPanel.classList.remove("open");
+        syncHamburgerState();
+      });
     });
+
+    syncHamburgerState();
   }
 
   const contactForm = document.querySelector("[data-contact-form]");
@@ -58,6 +70,92 @@ document.addEventListener("DOMContentLoaded", () => {
     if (icon) {
       node.innerHTML = renderIcon(icon);
     }
+  });
+
+  document.querySelectorAll("[data-password-toggle]").forEach((button) => {
+    const targetId = button.getAttribute("data-password-toggle");
+    const input = targetId ? document.getElementById(targetId) : null;
+    if (!input) {
+      return;
+    }
+
+    const syncToggleState = () => {
+      const isVisible = input.type === "text";
+      button.setAttribute("aria-pressed", isVisible ? "true" : "false");
+      button.setAttribute("aria-label", isVisible ? "Hide password" : "Show password");
+      const iconNode = button.querySelector("[data-icon]");
+      if (iconNode) {
+        const iconType = isVisible ? "eyeOff" : "eye";
+        iconNode.setAttribute("data-icon", iconType);
+        iconNode.innerHTML = renderIcon(iconType);
+      }
+    };
+
+    button.addEventListener("click", () => {
+      input.type = input.type === "password" ? "text" : "password";
+      syncToggleState();
+      input.focus({ preventScroll: true });
+    });
+
+    syncToggleState();
+  });
+
+  document.querySelectorAll("[data-role-picker]").forEach((picker) => {
+    const trigger = picker.querySelector("[data-role-trigger]");
+    const hiddenInput = picker.querySelector("[name='role']");
+    const label = picker.querySelector("[data-role-label]");
+    const options = Array.from(picker.querySelectorAll("[data-role-option]"));
+    if (!trigger || !hiddenInput || !label || !options.length) {
+      return;
+    }
+
+    const closePicker = () => {
+      picker.classList.remove("is-open");
+      trigger.setAttribute("aria-expanded", "false");
+    };
+
+    const openPicker = () => {
+      picker.classList.add("is-open");
+      trigger.setAttribute("aria-expanded", "true");
+    };
+
+    const setRole = (value) => {
+      hiddenInput.value = value;
+      label.textContent = value || "Choose role";
+      hiddenInput.dispatchEvent(new Event("input", { bubbles: true }));
+      hiddenInput.dispatchEvent(new Event("change", { bubbles: true }));
+    };
+
+    trigger.addEventListener("click", () => {
+      if (picker.classList.contains("is-open")) {
+        closePicker();
+      } else {
+        openPicker();
+      }
+    });
+
+    options.forEach((option) => {
+      option.addEventListener("click", () => {
+        setRole(option.getAttribute("data-role-option") || "");
+        closePicker();
+        trigger.focus({ preventScroll: true });
+      });
+    });
+
+    document.addEventListener("click", (event) => {
+      if (!picker.contains(event.target)) {
+        closePicker();
+      }
+    });
+
+    picker.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") {
+        closePicker();
+        trigger.focus({ preventScroll: true });
+      }
+    });
+
+    setRole(hiddenInput.value.trim());
   });
 
   setupAosAnimations();
@@ -83,6 +181,8 @@ function iconSvg(type) {
     teacher: '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="7" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>',
     contact: '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="m4 6 8 6 8-6"/></svg>',
     mail: '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>',
+    eye: '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>',
+    eyeOff: '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3l18 18"/><path d="M10.6 10.6A3 3 0 0 0 12 15a3 3 0 0 0 2.4-1.2"/><path d="M6.2 6.2C4 7.8 2.7 10 2 12c.7 2 4.2 7 10 7 1.6 0 3.1-.3 4.4-.8"/><path d="M9.9 4.2C10.6 4.1 11.3 4 12 4c5.8 0 9.3 5 10 8-.3 1-1 2.3-2 3.6"/></svg>',
     phone: '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 4h4l2 5-3 2c1.5 3 3.5 5 6 6l2-3 5 2v4c0 1.1-.9 2-2 2C10.6 22 2 13.4 2 3c0-1.1.9-2 2-2z"/></svg>',
     location: '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s6-5.7 6-11a6 6 0 1 0-12 0c0 5.3 6 11 6 11z"/><circle cx="12" cy="10" r="2.5"/></svg>',
     facebook: '<svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M13.5 22v-8h2.7l.4-3h-3.1V9c0-.9.2-1.5 1.6-1.5h1.7V5a23 23 0 0 0-2.5-.1c-2.5 0-4.2 1.5-4.2 4.3V11H8v3h2.1v8z"/></svg>',

@@ -15,7 +15,12 @@
 <body>
   <div class="dashboard-shell">
     <aside class="sidebar" data-sidebar>
-      <a class="brand" href="index.html"><img class="site-logo" src="assets/Logo.webp" alt="Stackly" /></a>
+      <div class="sidebar-mobile-header">
+        <a class="brand" href="index.html"><img class="site-logo" src="assets/Logo.webp" alt="Stackly" /></a>
+        <button class="sidebar-close-button" type="button" aria-label="Close menu" data-sidebar-close>
+          <span></span><span></span>
+        </button>
+      </div>
       <nav class="sidebar-nav" aria-label="Dashboard">
         <a class="active" href="#dashboard" data-dashboard-tab="dashboard"><span data-icon="home"></span>Dashboard</a>
         <a href="#courses" data-dashboard-tab="courses"><span data-icon="courses"></span>My Courses</a>
@@ -32,6 +37,14 @@
     <div class="sidebar-backdrop" data-sidebar-backdrop></div>
 
     <main class="dashboard-main">
+      <div class="dashboard-topbar">
+        <a class="brand mobile-dashboard-brand" href="index.html" aria-label="Stackly home">
+          <img class="site-logo mobile-logo" src="assets/Logo.webp" alt="Stackly" />
+        </a>
+        <button class="hamburger mobile-dashboard-toggle" type="button" aria-label="Open menu" aria-expanded="false" data-sidebar-toggle>
+          <span></span><span></span><span></span>
+        </button>
+      </div>
       <section class="dashboard-panel">
         <section class="dashboard-view active" data-dashboard-section="dashboard">
           <div class="session-banner">

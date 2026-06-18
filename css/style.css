@@ -264,9 +264,9 @@ textarea {
 
 .site-logo {
   display: block;
-  height: 49px;
+  height: 56px;
   width: auto;
-  filter: sepia(1) saturate(8) hue-rotate(340deg) brightness(0.98) contrast(1.08);
+  filter: sepia(1) saturate(8) hue-rotate(340deg) brightness(1.02) contrast(1.12);
 }
 
 .site-logo.footer-logo {
@@ -353,6 +353,21 @@ textarea {
   height: 2px;
   border-radius: 999px;
   background: var(--text);
+  transition: transform 180ms ease, opacity 180ms ease, width 180ms ease;
+  transform-origin: center;
+}
+
+.hamburger.is-open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.hamburger.is-open span:nth-child(2) {
+  opacity: 0;
+  width: 0;
+}
+
+.hamburger.is-open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
 }
 
 .hero {
@@ -2274,6 +2289,7 @@ textarea {
 
 .newsletter-box input {
   width: 100%;
+  min-width: 0;
   border: 0;
   outline: 0;
   background: transparent;
@@ -3087,7 +3103,8 @@ body {
   }
 
   .site-logo {
-    height: 42px;
+    height: 48px;
+    filter: sepia(1) saturate(8) hue-rotate(340deg) brightness(1) contrast(1.1);
   }
 
   .btn {
@@ -3165,8 +3182,11 @@ body {
   }
 
   .newsletter-box {
-    grid-template-columns: 1fr;
-    padding: 14px 16px;
+    grid-template-columns: minmax(0, 1fr) auto;
+    padding: 0 14px;
+    gap: 10px;
+    margin: 22px 0 18px;
+    align-items: center;
   }
 
   .footer-newsletter .btn {
