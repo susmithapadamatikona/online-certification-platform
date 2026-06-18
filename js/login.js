@@ -6,11 +6,13 @@ document.addEventListener("DOMContentLoaded", () => {
   const fields = {
     email: form.querySelector("[name='email']"),
     password: form.querySelector("[name='password']"),
+    rememberMe: form.querySelector("[name='rememberMe']"),
     role: form.querySelector("[name='role']"),
   };
 
   fields.email.value = "";
   fields.password.value = "";
+  fields.rememberMe.checked = false;
   fields.role.value = "";
 
   const setFieldError = (name, message = "") => {
@@ -43,6 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const payload = {
       email: fields.email.value.trim(),
       password: fields.password.value,
+      rememberMe: fields.rememberMe.checked,
       role: fields.role.value,
     };
 

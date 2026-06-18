@@ -16,6 +16,27 @@ function writeJson(key, value) {
   localStorage.setItem(key, JSON.stringify(value));
 }
 
+function readSessionStorage(key) {
+  try {
+    const raw = sessionStorage.getItem(key);
+    return raw ? JSON.parse(raw) : null;
+  } catch {
+    return null;
+  }
+}
+
+function writeSessionData(session, rememberMe) {
+  sessionStorage.removeItem(STORAGE_KEYS.session);
+  localStorage.removeItem(STORAGE_KEYS.session);
+
+  if (rememberMe) {
+    writeJson(STORAGE_KEYS.session, session);
+    return;
+  }
+
+  sessionStorage.setItem(STORAGE_KEYS.session, JSON.stringify(session));
+}
+
 function getUsers() {
   return readJson(STORAGE_KEYS.users, []);
 }
@@ -50,7 +71,7 @@ function registerUser(user) {
   return { ok: true, user: nextUser };
 }
 
-function loginUser({ email, password, role }) {
+function loginUser({ email, password, role, rememberMe = false }) {
   const user = findUserByEmail(email);
   if (!user) {
     const normalizedEmail = email.trim().toLowerCase();
@@ -67,7 +88,7 @@ function loginUser({ email, password, role }) {
       loggedInAt: new Date().toISOString(),
     };
 
-    writeJson(STORAGE_KEYS.session, session);
+    writeSessionData(session, rememberMe);
     return { ok: true, user: session };
   }
 
@@ -88,16 +109,17 @@ function loginUser({ email, password, role }) {
     loggedInAt: new Date().toISOString(),
   };
 
-  writeJson(STORAGE_KEYS.session, session);
+  writeSessionData(session, rememberMe);
   return { ok: true, user: session };
 }
 
 function getSessionUser() {
-  return readJson(STORAGE_KEYS.session, null);
+  return readSessionStorage(STORAGE_KEYS.session) || readJson(STORAGE_KEYS.session, null);
 }
 
 function clearSession() {
   localStorage.removeItem(STORAGE_KEYS.session);
+  sessionStorage.removeItem(STORAGE_KEYS.session);
 }
 
 function ensureSeedData() {

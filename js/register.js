@@ -92,5 +92,8 @@ document.addEventListener("DOMContentLoaded", () => {
     feedback.className = "alert success";
     feedback.textContent = "Registration complete. You can now log in with your details.";
     form.reset();
+    window.setTimeout(() => {
+      window.location.href = "login.html";
+    }, 700);
   });
 });
