@@ -54,6 +54,14 @@
         </div>
         <div class="field">
           <label for="role">Select Role</label>
+           <select id="role" name="role">
+            <option value="">Choose role</option>
+            <option>Student</option>
+            <option>Instructor</option>
+            <option>Administrator</option>
+          </select>
+            <p class="error" data-error-for="role"></p>
+        </div>
           <div class="auth-form-row auth-form-options">
             <label class="auth-remember">
               <input type="checkbox" name="rememberMe" />
@@ -61,14 +69,8 @@
             </label>
             <span class="auth-forgot-link">Forgot password?</span>
           </div>
-          <select id="role" name="role">
-            <option value="">Choose role</option>
-            <option>Student</option>
-            <option>Instructor</option>
-            <option>Administrator</option>
-          </select>
-          <p class="error" data-error-for="role"></p>
-        </div>
+         
+        
         <button class="btn btn-primary" type="submit">Login</button>
       </form>
       <div class="auth-social-login" aria-label="Social login options">
