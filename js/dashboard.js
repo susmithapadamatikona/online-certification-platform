@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
         loader.classList.add("is-visible");
       }
       window.setTimeout(() => {
-        window.location.href = "login.html";
+        window.location.href = "index.html";
       }, 1000);
     });
   });

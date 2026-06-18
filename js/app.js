@@ -6,6 +6,18 @@ document.addEventListener("DOMContentLoaded", () => {
     year.textContent = String(new Date().getFullYear());
   }
 
+  const goBackButton = document.querySelector("[data-go-back]");
+  if (goBackButton) {
+    goBackButton.addEventListener("click", () => {
+      if (window.history.length > 1) {
+        window.history.back();
+        return;
+      }
+
+      window.location.href = "index.html";
+    });
+  }
+
   const activePath = window.location.pathname.split("/").pop() || "index.html";
   document.querySelectorAll("[data-nav-link]").forEach((link) => {
     const linkPath = link.getAttribute("href");

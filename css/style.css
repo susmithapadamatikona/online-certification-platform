@@ -461,7 +461,7 @@ textarea {
 }
 
 .hero-overlay {
-  background: linear-gradient(90deg, rgba(17, 17, 17, 0.58) 0%, rgba(17, 17, 17, 0.34) 44%, rgba(17, 17, 17, 0) 100%);
+  background: linear-gradient(90deg, rgba(17, 17, 17, 0.8) 0%, rgba(17, 17, 17, 0.56) 44%, rgba(17, 17, 17, 0.1) 72%, rgba(17, 17, 17, 0) 100%);
   z-index: 1;
 }
 
@@ -514,6 +514,9 @@ textarea {
 }
 
 .hero-feature-card {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
   background: #1b1b1b;
   color: #f7f7f7;
   padding: 26px 22px 24px;
@@ -521,18 +524,60 @@ textarea {
   border-top: 4px solid var(--primary);
   box-shadow: 0 18px 38px rgba(0, 0, 0, 0.2);
   min-height: 188px;
+  cursor: pointer;
   transition:
-    transform 180ms ease,
-    box-shadow 180ms ease,
-    background 180ms ease,
-    border-color 180ms ease;
+    transform 220ms ease,
+    box-shadow 220ms ease,
+    background 220ms ease,
+    border-color 220ms ease;
+}
+
+.hero-feature-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.14), transparent 34%),
+    radial-gradient(circle at top right, rgba(255, 122, 69, 0.2), transparent 34%),
+    linear-gradient(90deg, transparent 0%, rgba(255, 122, 69, 0.08) 48%, transparent 100%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0));
+  background-size: 100% 100%, 100% 100%, 220% 100%, 100% 100%;
+  background-position: 0 0, 0 0, 0 0, 0 0;
+  opacity: 0.32;
+  pointer-events: none;
+  transition: opacity 260ms ease, background-position 900ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.hero-feature-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: radial-gradient(circle at 80% 20%, rgba(255, 122, 69, 0.16), rgba(255, 122, 69, 0) 55%);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 220ms ease, transform 220ms ease;
 }
 
 .hero-feature-card:hover {
-  transform: translateY(-4px);
-  background: linear-gradient(135deg, #242424, #111111);
-  border-top-color: #ff7a45;
-  box-shadow: 0 24px 55px rgba(0, 0, 0, 0.28);
+  transform: translateY(-8px) scale(1.02);
+  background:
+    linear-gradient(135deg, #313131 0%, #121212 72%),
+    #1b1b1b;
+  border-top-color: #ff8a57;
+  box-shadow:
+    0 26px 56px rgba(0, 0, 0, 0.28),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.06);
+}
+
+.hero-feature-card:hover::before {
+  opacity: 0.9;
+  background-position: 0 0, 0 0, 100% 0, 0 0;
+}
+
+.hero-feature-card:hover::after {
+  opacity: 1;
+  transform: scale(1.02);
 }
 
 .hero-feature-card .category-icon,
@@ -543,6 +588,7 @@ textarea {
 .hero-feature-card .mini-icon {
   background: rgba(255, 77, 31, 0.12);
   color: var(--primary);
+  transition: transform 220ms ease, background 220ms ease, color 220ms ease, box-shadow 220ms ease;
 }
 
 .hero-feature-card h3 {
@@ -553,6 +599,33 @@ textarea {
 .hero-feature-card p {
   color: rgba(255, 255, 255, 0.56);
   font-size: 0.92rem;
+}
+
+.hero-feature-card h3,
+.hero-feature-card p {
+  position: relative;
+  z-index: 1;
+  transition: transform 220ms ease, color 220ms ease;
+}
+
+.hero-feature-card:hover .category-icon,
+.hero-feature-card:hover .feature-icon,
+.hero-feature-card:hover .service-icon,
+.hero-feature-card:hover .stat-icon,
+.hero-feature-card:hover .dashboard-icon,
+.hero-feature-card:hover .mini-icon {
+  transform: translateY(-2px) scale(1.1);
+  background: rgba(255, 122, 69, 0.2);
+  color: #ff9a72;
+  box-shadow: 0 0 0 8px rgba(255, 122, 69, 0.08);
+}
+
+.hero-feature-card:hover h3 {
+  transform: translateY(-2px);
+}
+
+.hero-feature-card:hover p {
+  color: rgba(255, 255, 255, 0.82);
 }
 
 .hero-features-section {
@@ -711,6 +784,12 @@ textarea {
     rgba(255, 255, 255, 0.92);
   box-shadow: 0 16px 36px rgba(17, 17, 17, 0.08);
   overflow: hidden;
+  cursor: pointer;
+  transition:
+    transform 220ms ease,
+    box-shadow 220ms ease,
+    background 220ms ease,
+    border-color 220ms ease;
 }
 
 .choose-card::before {
@@ -722,6 +801,22 @@ textarea {
   width: 8px;
   border-radius: 0 8px 0 0;
   background: var(--primary);
+  transition:
+    width 220ms ease,
+    background 220ms ease,
+    box-shadow 220ms ease;
+}
+
+.choose-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at top right, rgba(255, 122, 69, 0.16), transparent 40%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.1), transparent 42%);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 220ms ease;
 }
 
 .mini-check {
@@ -735,6 +830,7 @@ textarea {
   place-items: center;
   background: var(--primary);
   color: #fff;
+  transition: transform 220ms ease, background 220ms ease, box-shadow 220ms ease;
 }
 
 .mini-check svg {
@@ -751,6 +847,38 @@ textarea {
   margin: 0;
   color: var(--muted);
   font-size: 0.92rem;
+}
+
+.choose-card:hover {
+  transform: translateY(-8px);
+  background:
+    linear-gradient(135deg, rgba(255, 122, 69, 0.12) 0 18%, transparent 18%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(247, 242, 236, 0.98));
+  box-shadow: 0 26px 56px rgba(17, 17, 17, 0.14);
+}
+
+.choose-card:hover::before {
+  width: 12px;
+  background: linear-gradient(180deg, #ff8a57, #ff4d1f);
+  box-shadow: 0 0 0 6px rgba(255, 77, 31, 0.08);
+}
+
+.choose-card:hover::after {
+  opacity: 1;
+}
+
+.choose-card:hover .mini-check {
+  transform: scale(1.08) rotate(-4deg);
+  background: linear-gradient(135deg, #ff4d1f, #ff8a57);
+  box-shadow: 0 12px 24px rgba(255, 77, 31, 0.24);
+}
+
+.choose-card:hover h3 {
+  color: var(--primary-dark);
+}
+
+.choose-card:hover p {
+  color: var(--text);
 }
 
 .about-highlight {
@@ -880,20 +1008,77 @@ textarea {
 .quote-card {
   display: flex;
   flex-direction: column;
+  border: 1px solid rgba(255, 77, 31, 0.1);
+  border-radius: var(--radius-md);
   overflow: hidden;
+  cursor: pointer;
   transition:
-    transform 180ms ease,
-    box-shadow 180ms ease,
-    background 180ms ease,
-    border-color 180ms ease;
+    transform 220ms ease,
+    box-shadow 220ms ease,
+    background 220ms ease,
+    border-color 220ms ease;
+}
+
+.quote-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.14), transparent 40%),
+    radial-gradient(circle at top right, rgba(255, 122, 69, 0.14), transparent 34%);
+  opacity: 0.35;
+  pointer-events: none;
+  transition: opacity 220ms ease;
 }
 
 .quote-card:hover {
-  transform: translateY(-4px);
-  border-color: rgba(255, 77, 31, 0.28);
+  transform: translateY(-10px) scale(1.02);
+  border-color: rgba(255, 77, 31, 0.24);
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.99), rgba(255, 236, 228, 0.96));
-  box-shadow: 0 24px 55px rgba(15, 23, 42, 0.12);
+    radial-gradient(circle at top left, rgba(255, 122, 69, 0.16), transparent 38%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.99), rgba(255, 242, 236, 0.98));
+  box-shadow:
+    0 28px 60px rgba(15, 23, 42, 0.16),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.55);
+}
+
+.quote-card:hover::before {
+  opacity: 0.98;
+}
+
+.quote-card-featured {
+  grid-column: span 4;
+}
+
+.quote-card-featured .quote-media {
+  aspect-ratio: 3 / 2;
+  min-height: 0;
+  padding: 14px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(244, 241, 234, 0.94));
+}
+
+.quote-card-featured .quote-media img {
+  object-fit: contain;
+  object-position: center;
+  transition: transform 320ms ease, filter 320ms ease;
+}
+
+.quote-card-featured .quote-media::after {
+  display: none;
+}
+
+.quote-card:hover .quote-media img {
+  transform: scale(1.035);
+  filter: saturate(1.05) contrast(1.03);
+}
+
+.quote-card:hover .quote-info strong {
+  color: var(--primary-dark);
+}
+
+.quote-card:hover .quote-info p {
+  color: var(--text);
 }
 
 .quote-media {
@@ -952,6 +1137,30 @@ textarea {
 .quote-info p {
   margin: 6px 0 0;
   color: var(--muted);
+}
+
+.quote-copy {
+  margin-top: 12px !important;
+  padding-left: 16px;
+  position: relative;
+  color: rgba(29, 29, 29, 0.84);
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+.quote-copy::before {
+  content: '"';
+  position: absolute;
+  left: 0;
+  top: -4px;
+  color: var(--primary);
+  font-size: 1.35rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.quote-card:hover .quote-copy {
+  color: rgba(29, 29, 29, 0.96);
 }
 
 .cta-banner {
@@ -1546,18 +1755,39 @@ textarea {
   border-radius: var(--radius-md);
   box-shadow: var(--shadow);
   overflow: hidden;
+  transition:
+    transform 220ms ease,
+    box-shadow 220ms ease,
+    border-color 220ms ease;
 }
 
 .path-media {
-  height: 240px;
+  height: 260px;
+  padding: 12px;
+  background:
+    linear-gradient(180deg, rgba(255, 77, 31, 0.06), rgba(17, 17, 17, 0.03)),
+    #ffffff;
   overflow: hidden;
 }
 
 .path-media img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  object-position: center;
   display: block;
+  transition: transform 220ms ease, filter 220ms ease;
+}
+
+.path-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(255, 77, 31, 0.22);
+  box-shadow: 0 28px 60px rgba(15, 23, 42, 0.14);
+}
+
+.path-card:hover .path-media img {
+  transform: scale(1.02);
+  filter: saturate(1.03) contrast(1.02);
 }
 
 .path-content {
